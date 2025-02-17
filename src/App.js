@@ -1,10 +1,13 @@
-import './index.css';
+import { Header } from "./components/Header";
+import { Login } from "./components/Login";
+
+
 
 function App() {
   return (
-    <div className='border-2 h-[100vh] flex items-center justify-center'>
-        <h1 className='text-3xl font-bold   text-blue-500'>Sri Vishunu rupaya nama Shivya</h1>
-      
+    <div>
+        <Login />
+
     </div>
   );
 }
