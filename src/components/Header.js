@@ -7,6 +7,7 @@ import React, { useEffect } from 'react';
 import {  onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from 'react-redux';
 import { addUser ,removeUser } from '../utils/userSlice';
+import { toggleGptSearchView } from "../utils/gptSlice";
 
 
 
@@ -38,11 +39,21 @@ export const Header = () =>{
           //unsubscribe when component unmounts
           return () => unsubscribe();
     },[])
+    const handleGptSearchClick = () => {
+      // Toggle GPT Search
+      dispatch(toggleGptSearchView());
+    };
     return(
         <div className="absolute bg-gradient-to-b from-black w-full flex justify-between z-10 ">
             <img className="w-44 h-20  ml-20 mt-4 "  src={URLs.LOGO_URL} alt="netflix logo"/>
        
          {user && <div className="flex px-16 py-5">
+          <button
+            className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
+            onClick={handleGptSearchClick}
+          >
+            GPT Search
+          </button>
             <img className="w-12 h-12 my-1 mx-2  object-cover" src={URLs.USER_AVATAR} alt="user-photo"/>
            <div>
            <h1 className="text-red-100 font-bold text-base">{user?.displayName}</h1>
