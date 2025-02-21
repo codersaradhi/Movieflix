@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-/src/utils/constants.js
+
 
 
 
@@ -27,4 +27,5 @@ yarn-error.log*
 
 # firebase
 /src/utils/firebase.js
+/src/utils/constants.js
 
