@@ -1,12 +1,18 @@
-import React from 'react'
+import { URLs } from "../utils/constants";
+import GptMovieSuggestions from "./GptMovieSuggestions";
+import GptSearchbar from "./GptSearchbar";
 
-const Gptpage = () => {
+const GPTpage = () => {
   return (
-    <div className='w-full h-full bg-white'>
-        <h1>Hello ji</h1>
-      
-    </div>
-  )
-}
-
-export default Gptpage
+    <>
+      <div className=" -z-10 w-screen h-screen">
+        <img className="h-auto" src={URLs.BG_IMG_URL} alt="logo" />
+      </div>
+      <div className="">
+        <GptSearchbar />
+        <GptMovieSuggestions />
+      </div>
+    </>
+  );
+};
+export default GPTpage;
