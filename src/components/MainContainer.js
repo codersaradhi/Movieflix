@@ -2,7 +2,8 @@ import React from "react";
 import VedioTitle from "./VedioTitle";
 import VedioBackground from "./VedioBackground";
 import { useSelector } from "react-redux";
-import MovieCards from "./MovieCards";
+// import MovieCards from "./ShimmerMovieCards";
+import SecondaryContainer from "./SecondaryContainer";
 
 const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
@@ -15,7 +16,7 @@ const MainContainer = () => {
       <div>
         <VedioTitle title={original_title} overview={overview} />
         <VedioBackground movieId={id} />
-      <MovieCards />
+        <SecondaryContainer />
       </div>
     
   );

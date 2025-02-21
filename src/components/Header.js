@@ -40,9 +40,9 @@ export const Header = () =>{
     },[])
     return(
         <div className="absolute bg-gradient-to-b from-black w-full flex justify-between z-10 ">
-            <img className="w-40 h-20  ml-28 mt-8 "  src={URLs.LOGO_URL} alt="netflix logo"/>
+            <img className="w-44 h-20  ml-20 mt-4 "  src={URLs.LOGO_URL} alt="netflix logo"/>
        
-         {user && <div className="flex px-20 py-10">
+         {user && <div className="flex px-16 py-5">
             <img className="w-12 h-12 my-1 mx-2  object-cover" src={URLs.USER_AVATAR} alt="user-photo"/>
            <div>
            <h1 className="text-red-100 font-bold text-base">{user?.displayName}</h1>

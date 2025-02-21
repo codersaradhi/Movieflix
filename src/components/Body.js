@@ -19,7 +19,7 @@ const Body = () => {
     
 
   return (
-    <div>
+    <div className='overflow-y-scroll no-scrollbar'>
      <RouterProvider router={appRouter} />
     </div>
   )
