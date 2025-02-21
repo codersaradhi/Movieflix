@@ -13,6 +13,7 @@ import { changeLanguage } from "../utils/configSlice";
 export const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const showGptSearch = useSelector((store)=> store.gpt.showGptSearch)
   const navigate = useNavigate();
   const handleClick = () => {
     signOut(auth)
@@ -61,18 +62,18 @@ export const Header = () => {
 
       {user && (
         <div className="flex px-16 py-5">
-          <select className="bg-gray-900 text-white p-2 m-2" onChange={handleLanguageChange}>
+          {showGptSearch && <select className="bg-gray-900 text-white p-2 m-2" onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGES.map((lang) => (
               <option key={lang.identifier} value={lang.identifier}>
                 {lang.name}
               </option>
             ))}
-          </select>
+          </select>}
           <button
-            className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
+            className="py-1 px-2 mx-4 my-2 bg-black border-2 border-gray-500 text-white"
             onClick={handleGptSearchClick}
           >
-            GPT Search
+            {showGptSearch ? "Home": "GPT Search"}
           </button>
           <img
             className="w-12 h-12 my-1 mx-2  object-cover"

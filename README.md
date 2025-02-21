@@ -33,6 +33,7 @@
   - TMDB Image CDN URL 
   - Made the browser page amazing with tailwindcss
   - usePopular custom movies hook
-  
-
+  - gpt search page and gpt search bar
+  - kudous I build Mulit-language Feature in our App
+  - Interating the gpt api's 
  
