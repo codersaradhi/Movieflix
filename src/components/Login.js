@@ -4,14 +4,13 @@ import { Header } from "./Header";
 import { checkValidData } from "../utils/validate";
 import { createUserWithEmailAndPassword ,signInWithEmailAndPassword ,updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+
 
 export const Login = () => {
   const [signInForm, setSignInForm] = useState(true);
   const [errMsg, setErrMsg] = useState();
-  const navigate = useNavigate()
   const dispatch = useDispatch()
 
   const email = useRef(null);
@@ -21,8 +20,8 @@ export const Login = () => {
   const handleSubmit = () => {
     const message = checkValidData(
       email.current.value,
-      password.current.value
-      //   name.current.value
+      password.current.value,
+      // name.current.value
     );
     setErrMsg(message);
     if (message) return;
@@ -38,7 +37,7 @@ export const Login = () => {
           // Signed up
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: name.current.value , photoURL: "https://media.istockphoto.com/id/1086164374/photo/statue-of-shiva-hindu-idol-on-the-ganges-river-rishikesh-india.jpg?s=612x612&w=0&k=20&c=MJgUvsXsoOwcZuTU9xSfJNMfwcA_kPdvnTuJpHwrqrc="
+            displayName: name.current.value , photoURL: URLs.USER_AVATAR,
           }).then(() => {
             const {uid,displayName,email,photoURL} = auth.currentUser; //we have to update our current user with displayname and photourl value
             dispatch(addUser({
@@ -47,7 +46,6 @@ export const Login = () => {
                 email:email,
                 photoURL:photoURL,
             }))
-            navigate("/browse")
             // Profile updated!
             // ...
           }).catch((error) => {
@@ -70,8 +68,6 @@ export const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-        //   console.log(user)
-        navigate("/browse")
           
 
         })
