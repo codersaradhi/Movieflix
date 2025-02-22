@@ -1,10 +1,12 @@
 import React, { useRef } from "react";
 import lang from "../utils/languageConstants";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import openai from "../utils/openai";
 import { API_OPTIONS } from "../utils/constants";
+import { addGptMovieResult } from "../utils/gptSlice";
 
 const GptSearchbar = () => {
+  const dispatch = useDispatch()
   const langKey = useSelector((store) => {
     
     return store.config.lang;
@@ -37,12 +39,15 @@ const GptSearchbar = () => {
     //     Your query is empty..
     //   </div>
     // } //have to check this error handling
-    console.log(gptResults.choices?.[0]?.message?.content);
+    // console.log(gptResults.choices?.[0]?.message?.content);
     const gptMovies = gptResults.choices?.[0]?.message?.content.split(",");
+    console.log(gptMovies)
     const PromiseArray = gptMovies.map((movie)=>searchMovieTMDB(movie))
     const tmbdResults = await Promise.all(PromiseArray)
-    console.log(tmbdResults)
+    // console.log(tmbdResults)
+    dispatch(addGptMovieResult({movieNames:gptMovies, movieResults:tmbdResults}));
   };
+
 
   return (
     <div className="pt-[10%] flex justify-center absolute top-28 mx-auto right-0 left-0">
