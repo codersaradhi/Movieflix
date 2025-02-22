@@ -7,7 +7,7 @@ const GPTpage = () => {
     <>
       <div className=" fixed ">
         <img
-          className=" w-screen h-screen object-cover"
+          className="w-screen h-screen object-cover"
           src={URLs.BG_IMG_URL}
           alt="logo"
         />
