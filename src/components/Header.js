@@ -53,7 +53,7 @@ export const Header = () => {
     dispatch(changeLanguage(e.target.value))
   }
   return (
-    <div className="absolute bg-gradient-to-b from-black w-full flex justify-between z-10 ">
+    <div className="fixed bg-gradient-to-b from-black w-full flex justify-between z-10 ">
       <img
         className="w-44 h-20  ml-20 mt-4 "
         src={URLs.LOGO_URL}

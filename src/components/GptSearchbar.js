@@ -46,6 +46,7 @@ const GptSearchbar = () => {
     const tmbdResults = await Promise.all(PromiseArray)
     // console.log(tmbdResults)
     dispatch(addGptMovieResult({movieNames:gptMovies, movieResults:tmbdResults}));
+    searchText.current.value = "";
   };
 
 
