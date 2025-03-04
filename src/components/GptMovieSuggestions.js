@@ -8,7 +8,7 @@ const GptMovieSuggestions = () => {
 
   return (
     <div className="bg-black 
-     text-white bg-opacity-70 relative top-96">
+     text-white bg-opacity-70 relative  top-96 ">
       <div >
         {movieNames.map((movie, index) => (
           <MovieList key={movie.index} title={movie} Movies={movieResults[index]} />

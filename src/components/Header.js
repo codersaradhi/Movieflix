@@ -53,9 +53,9 @@ export const Header = () => {
     dispatch(changeLanguage(e.target.value))
   }
   return (
-    <div className="fixed bg-gradient-to-b from-black w-full flex justify-between z-10 ">
+    <div className="absolute md:fixed  bg-gradient-to-b from-black w-full flex-col md:flex-row flex   justify-between z-10 ">
       <img
-        className="w-44 h-20  ml-20 mt-4 "
+        className="w-44 h-20  mx-auto mt-4 md:mt-4 md:ml-20"
         src={URLs.LOGO_URL}
         alt="netflix logo"
       />
