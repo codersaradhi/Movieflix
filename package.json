@@ -1,5 +1,5 @@
 {
-  "homepage": "https://codersaradhi.github.io/netflix",
+  "homepage": "https://codersaradhi.github.io/",
   "name": "netflix",
   "version": "0.1.0",
   "private": true,
@@ -24,9 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build -f",
-    "homepage": "https://codersaradhi.github.io/netflix"
+    "predeploy": "npm run build"
 
   },
   "eslintConfig": {
